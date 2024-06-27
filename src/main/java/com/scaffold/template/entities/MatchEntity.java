@@ -1,5 +1,6 @@
 package com.scaffold.template.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.scaffold.template.models.MatchDifficulty;
 import com.scaffold.template.models.MatchStatus;
 import jakarta.persistence.*;
@@ -35,8 +36,10 @@ public class MatchEntity {
     private MatchStatus status;
 
     @Column
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private LocalDateTime createdAt;
 
     @Column
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private LocalDateTime updatedAt;
 }
